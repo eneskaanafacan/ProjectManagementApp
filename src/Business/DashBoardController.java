@@ -14,7 +14,6 @@ public class DashBoardController {
     private EmployeeDao employeeDao;
     private TaskDao taskDao;
 
-
     public DashBoardController() {
         this.employeeDao = new EmployeeDao();
         this.taskDao = new TaskDao();
@@ -52,5 +51,24 @@ public class DashBoardController {
         }
     }
 
+    public boolean isEmployeeAssignedToAnyTask(int employeeId) {
+        // Tüm görevleri kontrol et ve çalışanın başka bir projede görevli olup olmadığını kontrol et
+        ArrayList<Task> allTasks = getAllTasks(); // Tüm görevleri çeken bir yöntem
+        for (Task task : allTasks) {
+            if (task.getEmployeeID() == employeeId) {
+                return true; // Çalışan başka bir projede görevli
+            }
+        }
+        return false; // Çalışan herhangi bir projede görevli değil
+    }
 
+
+    private ArrayList<Task> getAllTasks() {
+        try {
+            return new ArrayList<>(taskDao.getAllTasks());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
 }

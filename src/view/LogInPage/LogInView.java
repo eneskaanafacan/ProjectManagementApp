@@ -2,7 +2,7 @@ package view.LogInPage;
 
 import core.Helper;
 import entity.User;
-import business.UserController;
+import Business.UserController;
 import view.DashBoardPage.DashBoardView;
 
 import javax.swing.*;

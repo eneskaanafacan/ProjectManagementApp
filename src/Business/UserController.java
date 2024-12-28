@@ -1,4 +1,4 @@
-package business;
+package Business;
 
 import core.Helper;
 import dao.UserDao;

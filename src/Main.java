@@ -8,7 +8,7 @@ public class Main {
         Helper.setTheme();
         //Kolay erişim için:
         //LogInView logInView = new LogInView();
-        business.UserController userController = new business.UserController();
+        Business.UserController userController = new Business.UserController();
         User user = userController.findByLogin("user1@example.com", "password123");   //Varsayılan olarak mail ve paswword direkt bu
         DashBoardView dashBoardView = new DashBoardView(user);    //Dashboardı aç
 

@@ -401,6 +401,12 @@ public class DashBoardView extends JFrame {
                         return;
                     }
 
+                    // Çalışanın daha önce herhangi bir projede görevi olup olmadığını kontrol et
+                    if (dashBoardController.isEmployeeAssignedToAnyTask(employeeId)) {
+                        Helper.showMessage("Bu çalışan zaten başka bir projede görevlendirilmiş. Lütfen başka bir çalışan seçin.");
+                        return;
+                    }
+
                     Task newTask = new Task(
                             taskId,
                             selectedProjectId,
@@ -426,6 +432,7 @@ public class DashBoardView extends JFrame {
                             "- ID'ler ve iş günü sayısal olmalı");
                 }
             });
+
 
             taskFrame.add(taskPanel);
             taskFrame.setVisible(true);
