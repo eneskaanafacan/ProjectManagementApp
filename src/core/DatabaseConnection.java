@@ -15,7 +15,7 @@ public class DatabaseConnection {
 
     public static DatabaseConnection instance = null;
     private Connection connection = null;
-    public static final String DB_URL = "jdbc:mysql://localhost:3307/pmngmntdb";
+    public static final String DB_URL = "jdbc:mysql://localhost:3306/pmngmntdb";
     public static final String DB_USER = "root";
     public static final String DB_PASSWORD = "";
 
