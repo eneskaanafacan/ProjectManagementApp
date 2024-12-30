@@ -16,7 +16,7 @@ public class Task {
     public enum Status {
         TAMAMLANDI("TAMAMLANDI"),
         DEVAM_EDIYOR("DEVAM_EDIYOR"),
-        TAMAMLANACAK("DEVAM_EDIYOR");
+        TAMAMLANACAK("TAMAMLANACAK");
 
         private final String status;
 
